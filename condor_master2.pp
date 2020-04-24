@@ -5,5 +5,8 @@ class { 'ntp':
   }
 
 
+package { 'git':       
+    ensure => '1:2.7*', 
+    }
 
 }
