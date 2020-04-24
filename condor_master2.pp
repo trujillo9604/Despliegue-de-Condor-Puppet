@@ -5,8 +5,8 @@ class { 'ntp':
   }
 
 
-package { 'git':       
-    ensure => '1:2.7*', 
+package { 'tmuxinator':       
+    ensure => '0.7*', 
     }
 
 }
