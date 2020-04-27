@@ -7,13 +7,13 @@ class { 'ntp':
 apt:source { 'HTCondor':
     comment => 'Repositorio de HTCondor',
     location => 'http://research.cs.wisc.edu/htcondor/debian/stable/',
-    release  => 'unstable',
-    repos    => 'main contrib non-free',
-    pin      => '-10',
+    release  => 'main',
+    repos    => '   ',
+    pin      => '   ',
     
     key      => {
-    'id'     => 'A1BD8E9D78F7FE5C3E65D8AF8B48AD6246925553',
-    'server' => 'subkeys.pgp.net',
+    'id'     => '      ',
+    'server' => '      ',
   },
   
   include  => {
