@@ -1,0 +1,7 @@
+class { 'apt':
+    update => {
+        frequency => 'dayli',
+        loglevel =>  'debug' ,
+    },
+}
+
