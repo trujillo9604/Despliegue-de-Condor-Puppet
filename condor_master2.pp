@@ -1,6 +1,12 @@
 node '192.168.20.49'{
 
-include update 
+
+class { 'apt':
+    update => {
+        frequency => 'dayli',
+        loglevel =>  'debug' ,
+    },
+}
 
 class { 'ntp':
     servers => ['172.22.250.1']
