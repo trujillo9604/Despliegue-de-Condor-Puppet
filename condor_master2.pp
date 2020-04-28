@@ -3,7 +3,7 @@ node '192.168.20.49'{
 
 class { 'apt':
     update => {
-        frequency => 'dayli',
+        frequency => 'daily',
         loglevel =>  'debug' ,
     },
 }
