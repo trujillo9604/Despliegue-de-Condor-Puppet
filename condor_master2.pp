@@ -8,10 +8,10 @@ class { 'ntp':
 #Añadir repositorio de HTCondor
 
 file { "/home/netsupport/sources.list":
-    ensure => present,
-    owner  => root,
-    group  => root,
-    mode   => 644,
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '644',
     source => 'puppet:///files_ciat/condor_files/sources.list',
 }
 # exec { "
