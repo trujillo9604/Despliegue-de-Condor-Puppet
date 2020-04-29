@@ -8,8 +8,9 @@ class { 'ntp':
 #Añadir repositorio de HTCondor
 
 file { "/etc/apt/source.list":
-    content => " deb [arch=amd64]  http://research.cs.wisc.edu/htcondor/ubuntu/8.8/bionic  wheezy contrib ", 
-    replace => false,
+    ensure => present,
+    content => 'deb [arch=amd64]  http://research.cs.wisc.edu/htcondor/ubuntu/8.8/bionic  wheezy contrib ', 
+    replace => true,
 }
 
 
@@ -22,22 +23,21 @@ class { 'apt':
 
 
 #Recurso para instalar HTCondor
-package { 'htcondor':
-    ensure => '8.8',
-    name   => "condor",
-}
+#package { 'htcondor':
+#    ensure => '8.8',
+#    name   => "condor",
+#}
 
 #Recurso para iniciar el servicio de HTCondor
-service {'Condor Service':
-    ensure => running,
-    name => "condor",
-}
+#service {'condor':
+#    ensure => running,
+#}
 
 #Recurso para modificar el archivo de configuracion de HTCONDOR
 
-file { '/etc/condor/condor_config.local':
-    content => "         \n", "           \n", 
-}
+#file { '/etc/condor/condor_config.local':
+#    content => "         \n", "           \n", 
+#}
 
 
 
