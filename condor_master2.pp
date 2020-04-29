@@ -7,7 +7,7 @@ class { 'ntp':
 
 #Añadir repositorio de HTCondor
 
-file { '/etc/apt/source.list':
+file { "/etc/apt/source.list":
     content => " deb [arch=amd64]  http://research.cs.wisc.edu/htcondor/ubuntu/8.8/bionic  wheezy contrib ", 
     replace => false,
 }
