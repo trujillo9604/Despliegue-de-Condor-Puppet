@@ -10,7 +10,12 @@ class { 'ntp':
 file { "/etc/apt/source.list":
     ensure => present,
     replace => true,
-    content => "deb [arch=amd64]  http://research.cs.wisc.edu/htcondor/ubuntu/8.8/bionic  wheezy contrib\n",
+    content => "\n deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted \n deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
+                \n deb http://us.archive.ubuntu.com/ubuntu/ xenial universe \n deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe
+                \n deb http://us.archive.ubuntu.com/ubuntu/ xenial multiverse \n deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates multiverse
+                \n deb http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse \n deb http://security.ubuntu.com/ubuntu xenial-security main restricted
+                \n deb http://security.ubuntu.com/ubuntu xenial-security universe \n deb http://security.ubuntu.com/ubuntu xenial-security multiverse
+                \n deb [arch=amd64]  http://research.cs.wisc.edu/htcondor/ubuntu/8.8/bionic  wheezy contrib \n",
 }
 
 
