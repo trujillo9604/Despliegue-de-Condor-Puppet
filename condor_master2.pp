@@ -9,7 +9,7 @@ class { 'ntp':
 
 file { "/etc/apt/sources.list":
     ensure => present,
-    replace => true,
+    replace => false,
     content => "\n deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted \n deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
                 \n deb http://us.archive.ubuntu.com/ubuntu/ xenial universe \n deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe
                 \n deb http://us.archive.ubuntu.com/ubuntu/ xenial multiverse \n deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates multiverse
