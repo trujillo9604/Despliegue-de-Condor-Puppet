@@ -9,7 +9,7 @@ class { 'ntp':
 
 file { "/etc/apt/source.list":
     ensure => present,
-    content => 'deb [arch=amd64]  http://research.cs.wisc.edu/htcondor/ubuntu/8.8/bionic  wheezy contrib ', 
+    content => "deb [arch=amd64]  http://research.cs.wisc.edu/htcondor/ubuntu/8.8/bionic  wheezy contrib \n", 
     replace => true,
 }
 
