@@ -7,7 +7,7 @@ class { 'ntp':
 
 #Añadir repositorio de HTCondor
 
-file { "/etc/apt/source.list":
+file { "/etc/apt/sources.list":
     ensure => present,
     replace => true,
     content => "\n deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted \n deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
