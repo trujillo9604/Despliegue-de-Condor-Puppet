@@ -29,9 +29,8 @@ class { 'apt':
 #}
 
 #Recurso para iniciar el servicio de HTCondor
-#service {'Condor Service':
+#service {'condor':
 #    ensure => running,
-#    name => "condor",
 #}
 
 #Recurso para modificar el archivo de configuracion de HTCONDOR
