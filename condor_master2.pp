@@ -12,7 +12,7 @@ file { "/home/netsupport/sources.list":
     owner  => root,
     group  => root,
     mode   => 644,
-    source => 'puppet:///files_ciat/condor_files/sources.list,
+    source => 'puppet:///files_ciat/condor_files/sources.list',
 }
 # exec { "
     
