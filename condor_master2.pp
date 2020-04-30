@@ -34,14 +34,14 @@ class { 'apt':
 
 
 #Recurso para instalar HTCondor
-package { 'htcondor':
+package { 'condor':
     ensure => '8.8',
 }
 
 #Recurso para iniciar el servicio de HTCondor
-#service {'condor':
-#    ensure => running,
-#}
+service {'condor':
+    ensure => running,
+}
 
 #Recurso para modificar el archivo de configuracion de HTCONDOR
 
