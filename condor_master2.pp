@@ -44,25 +44,22 @@ service {'condor':
 
 #Recurso para modificar el archivo de configuracion de HTCONDOR
 
-file { "/home/netsupport/escritura/condor_config.local":
+file { "/home/netsupport/condor_config.local":
  ensure => 'present',
     owner  => 'root',
     group  => 'root',
     mode   => '644',
-    source => 'puppet:///files_ciat/condor_files/condor_config.local',
+    source => 'puppet:///files_ciat/condor_files/condor_config_master.local',
 }
 
 #Sobreescritura del archivo de configuracion de condor
 
  exec { "CP_CONFIG": 
-    command => '/bin/cp -rp /home/netsupport/escritura/condor_config.local etc/condor/condor_config.local',
+    command => '/bin/cp -rp /home/netsupport/condor_config.local /etc/condor',
 }
 
 
-#Modificar archivo HOSTS para añadir las IP´S de los nodos esclavos
-
-
-
+#Modificar archivo HOSTS para añadir las IP´S de los nodos esclavos no fue necesario
 
 
 }
