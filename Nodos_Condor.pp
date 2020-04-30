@@ -40,7 +40,6 @@ package { 'condor':
 
 service {'condor':
         ensure => running,
-        ensure => running,
         enable => true,
 }
 
