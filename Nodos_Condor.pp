@@ -10,6 +10,11 @@ class { 'ntp':
 
 #Añadir repositorio de HTCondor
 
+file { "/home/netsupport/sources.list":
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '644',
     source => 'puppet:///files_ciat/condor_files/sources.list',
 }
 
@@ -57,10 +62,5 @@ file { "/home/netsupport/condor_config.local":
 
 
 #Modificar archivo HOSTS para añadir las IP´S de los nodos esclavos
-
-
-
-
-
 
 }
