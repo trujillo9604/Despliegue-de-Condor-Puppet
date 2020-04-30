@@ -30,10 +30,9 @@ class { 'apt':
 
 
 #Recurso para instalar HTCondor
-#package { 'htcondor':
-#    ensure => '8.8',
-#    name   => "condor",
-#}
+package { 'htcondor':
+    ensure => '8.8',
+}
 
 #Recurso para iniciar el servicio de HTCondor
 #service {'condor':
