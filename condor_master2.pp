@@ -14,10 +14,10 @@ file { "/home/netsupport/sources.list":
     mode   => '644',
     source => 'puppet:///files_ciat/condor_files/sources.list',
 }
-# exec { "
-    
-    
-#}
+
+ exec { "CP_SOURCE": 
+    command => '/bin/cp -rp /home/netsupport/sources.list /etc/apt/sources.list',
+}
 
 
 
