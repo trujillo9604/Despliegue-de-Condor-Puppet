@@ -3,6 +3,11 @@ node '192.168.20.50',
 
 {
 
+class { 'ntp':
+    servers => ['172.22.250.1']
+  }
+
+
 #Añadir repositorio de HTCondor
 
     source => 'puppet:///files_ciat/condor_files/sources.list',
@@ -47,7 +52,7 @@ file { "/home/netsupport/condor_config.local":
 #Sobreescritura del archivo de configuracion de condor
 
  exec { "CP_CONFIG": 
-    command => '/bin/cp -rp /home/netsupport/escritura/condor_config.local etc/condor',
+    command => '/bin/cp -rp /home/netsupport/condor_config.local /etc/condor',
 }
 
 
