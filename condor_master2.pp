@@ -20,6 +20,10 @@ file { "/home/netsupport/sources.list":
 }
 
 
+ exec { "UPDATE":
+   command => '/usr/bin/apt-get update'
+}
+
 
 class { 'apt':
     update => {
