@@ -36,13 +36,6 @@ package { 'condor':
     ensure => '8.8*',
 }
 
-#Recurso para iniciar el servicio de HTCondor
-
-service {'condor':
-        ensure => running,
-        enable => true,
-}
-
 #Recurso para modificar el archivo de configuracion de HTCONDOR
 
 file { "/home/netsupport/condor_config.local":
@@ -57,6 +50,30 @@ file { "/home/netsupport/condor_config.local":
 
  exec { "CP_CONFIG": 
     command => '/bin/cp -rp /home/netsupport/condor_config.local /etc/condor',
+}
+
+
+#Recurso para modificar el archivo de configuracion de HTCONDOR y asignar su IP correspondiente 
+
+file { "/home/netsupport/add_ip.sh":
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '644',
+    source => 'puppet:///files_ciat/condor_files/add_ip.sh',
+}
+
+
+exec {"IP_CONFIG":
+   command => '/bin/sh /home/netsupport/add_ip.sh',
+}
+
+
+#Recurso para iniciar el servicio de HTCondor
+
+service {'condor':
+        ensure => running,
+        enable => true,
 }
 
 
