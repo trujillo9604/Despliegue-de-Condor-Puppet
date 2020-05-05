@@ -59,6 +59,30 @@ file { "/home/netsupport/condor_config.local":
 }
 
 
+#Recurso para modificar el archivo de configuracion de HTCONDOR y asignar su IP correspondiente 
+
+file { "/home/netsupport/add_ip.sh":
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '644',
+    source => 'puppet:///files_ciat/condor_files/add_ip.sh',
+}
+
+
+exec {"IP_CONFIG":
+   command => '/bin/sh /home/netsupport/add_ip.sh',
+}
+
+
+#Recurso para iniciar el servicio de HTCondor
+
+service {'condor':
+        ensure => running,
+        enable => true,
+}
+
+
 #Modificar archivo HOSTS para añadir las IP´S de los nodos esclavos no fue necesario
 
 
