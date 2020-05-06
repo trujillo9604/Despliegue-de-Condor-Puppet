@@ -35,12 +35,6 @@ package { 'condor':
     ensure => '8.8*',
 }
 
-#Recurso para iniciar el servicio de HTCondor
-
-service {'condor':
-        ensure => running,
-        enable => true,
-}
 
 #Recurso para modificar el archivo de configuracion de HTCONDOR
 
