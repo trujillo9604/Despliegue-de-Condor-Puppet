@@ -50,8 +50,8 @@ file { "/home/netsupport/sources.list":
 
 #Recurso para instalar HTCondor
 
-package { 'condor':
-    ensure => '8.8*',
+package { 'htcondor':
+    ensure => '8.4*',
 }
 
 
