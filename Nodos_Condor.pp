@@ -8,6 +8,24 @@ class { 'ntp':
   }
 
 
+#Añadir Ips al hosts
+
+file { "/home/netsupport/hosts":
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '644',
+    source => 'puppet:///files_ciat/condor_files/hosts',
+}
+
+#Sobreescritura del archivo hosts
+
+ exec { "CP_SOURCE": 
+    command => '/bin/cp -rp /home/netsupport/hosts /etc/hosts',
+}
+
+
+
 #Añadir repositorio de HTCondor
 
 file { "/home/netsupport/sources.list":
