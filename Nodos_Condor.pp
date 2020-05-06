@@ -20,7 +20,7 @@ file { "/home/netsupport/hosts":
 
 #Sobreescritura del archivo hosts
 
- exec { "CP_SOURCE": 
+ exec { "CP_HOSTS": 
     command => '/bin/cp -rp /home/netsupport/hosts /etc/hosts',
 }
 
